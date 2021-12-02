@@ -12,5 +12,5 @@
     </padding>
 
     <Label fx:id="welcomeText"/>
-    <Button text="Hello from zaki!" onAction="#onHelloButtonClick"/>
+    <Button text="Hello from mohssine!" onAction="#onHelloButtonClick"/>
 </VBox>
