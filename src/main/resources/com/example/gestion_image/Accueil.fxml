@@ -16,6 +16,5 @@
       <Button fx:id="effet" layoutX="213.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleEffet" text="Effet" />
       <ImageView fx:id="ivFiles2" fitHeight="321.0" fitWidth="296.0" layoutX="356.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
 
-      //sss
    </children>
 </AnchorPane>
