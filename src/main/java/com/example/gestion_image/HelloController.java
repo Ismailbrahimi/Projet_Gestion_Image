@@ -15,7 +15,7 @@ import java.io.Writer;
 public class HelloController {
 
     //creation de l'objet filechooser
-    final FileChooser fc = new FileChooser();
+    public FileChooser fc = new FileChooser();
 
     @FXML
     private Button btnOpenImgFile;
@@ -75,7 +75,6 @@ public class HelloController {
     }
 
     public void handleEffet() {
-        System.out.println("--------1");
 
         Image imgIN = ivFiles.getImage();
         int h= (int) imgIN.getHeight();
@@ -86,14 +85,11 @@ public class HelloController {
 
         for(int i = 0; i < h; i++) {
             for(int j = 0; j < w; j++) {
-
                 Color colorImgIN = imgIN.getPixelReader().getColor(j,i) ;
-                Color colorImgOUT = colorImgIN.invert();
-
+                Color colorImgOUT = colorImgIN.grayscale();
                 imgOUT.getPixelWriter().setColor(j,i,colorImgOUT);
-
             }
         }
-        ivFiles2.setImage(imgOUT);
+        ivFiles.setImage(imgOUT);
     }
 }
