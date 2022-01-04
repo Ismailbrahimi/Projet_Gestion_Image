@@ -5,11 +5,12 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+import javafx.scene.image.*;
+import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 
 import java.io.File;
+import java.io.Writer;
 
 public class HelloController {
 
@@ -21,6 +22,9 @@ public class HelloController {
 
     @FXML
     private ImageView ivFiles;
+    @FXML
+    private ImageView ivFiles2;
+
 
     @FXML
     private Button myLeft;
@@ -48,13 +52,14 @@ public class HelloController {
             ivFiles.setScaleX(1);
         }
 
+
     }
 
     @FXML
-    public void handleBtnOpenImgFile(ActionEvent event)
+    public void handleBtnOpenImgFile()
     {
     fc.setTitle("Title");
-    fc.setInitialDirectory(new File("C:\\Users\\ps42\\IdeaProjects\\Gestion_Image\\Ressources"));
+    fc.setInitialDirectory(new File("F:\\ProjetPOO\\Ressources"));
     fc.getExtensionFilters().clear();
     fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.gif"));
 
@@ -67,5 +72,28 @@ public class HelloController {
     {
         System.out.println("A file is invalid");
     }
+    }
+
+    public void handleEffet() {
+        System.out.println("--------1");
+
+        Image imgIN = ivFiles.getImage();
+        int h= (int) imgIN.getHeight();
+        int w= (int) imgIN.getWidth();
+        System.out.println("H : "+h+" W : "+w);
+
+        WritableImage imgOUT = new WritableImage(w,h);
+
+        for(int i = 0; i < h; i++) {
+            for(int j = 0; j < w; j++) {
+
+                Color colorImgIN = imgIN.getPixelReader().getColor(j,i) ;
+                Color colorImgOUT = colorImgIN.invert();
+
+                imgOUT.getPixelWriter().setColor(j,i,colorImgOUT);
+
+            }
+        }
+        ivFiles2.setImage(imgOUT);
     }
 }
