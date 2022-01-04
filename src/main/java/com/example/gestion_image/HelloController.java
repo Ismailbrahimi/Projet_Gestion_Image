@@ -23,6 +23,34 @@ public class HelloController {
     private ImageView ivFiles;
 
     @FXML
+    private Button myLeft;
+
+    @FXML
+    private Button myRight;
+
+    @FXML
+    public void rotateImageRight()
+    {
+            ivFiles.setRotate(ivFiles.getRotate()+90);
+    }
+
+    @FXML
+    public void rotateImageLeft()
+    {
+        ivFiles.setRotate(ivFiles.getRotate()-90);
+    }
+
+    @FXML
+    public void handleSymetrie() {
+        if(ivFiles.getScaleX()==1){
+            ivFiles.setScaleX(-1);
+        }else {
+            ivFiles.setScaleX(1);
+        }
+
+    }
+
+    @FXML
     public void handleBtnOpenImgFile(ActionEvent event)
     {
     fc.setTitle("Title");
