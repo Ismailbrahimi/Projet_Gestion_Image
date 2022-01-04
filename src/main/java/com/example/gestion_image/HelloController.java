@@ -59,7 +59,7 @@ public class HelloController {
     public void handleBtnOpenImgFile()
     {
     fc.setTitle("Title");
-    fc.setInitialDirectory(new File("F:\\ProjetPOO\\Ressources"));
+    fc.setInitialDirectory(new File("C:\\Users\\z_aki\\OneDrive\\Bureau\\Mes études\\2020-2021 dirasa\\Java\\Projet_Gestion_Image\\Ressources"));
     fc.getExtensionFilters().clear();
     fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.gif"));
 
