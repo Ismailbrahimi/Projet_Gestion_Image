@@ -6,13 +6,15 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion_image.HelloController">
    <children>
-      <Button id="btn" fx:id="btnOpenImgFile" layoutY="1.0" mnemonicParsing="false" onAction="#handleBtnOpenImgFile" text="Importer une Image" />
-      <ImageView fx:id="ivFiles" fitHeight="440.0" fitWidth="690.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
+      <Button id="btn" fx:id="btnOpenImgFile" layoutX="70.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleBtnOpenImgFile" text="Importer une Image" />
+      <ImageView fx:id="ivFiles" fitHeight="321.0" fitWidth="296.0" layoutX="14.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="740.0" layoutY="35.0" text="Effectuer un rotation :" />
       <Button fx:id="myRight" layoutX="818.0" layoutY="60.0" mnemonicParsing="false" onAction="#rotateImageRight" text="Droite " />
       <Button fx:id="myLeft" layoutX="740.0" layoutY="60.0" mnemonicParsing="false" onAction="#rotateImageLeft" text="Gauche" />
       <Label layoutX="740.0" layoutY="105.0" text="Effet mirroir :" />
       <Button fx:id="mySymetrie" layoutX="740.0" layoutY="134.0" mnemonicParsing="false" onAction="#handleSymetrie" text="Symetrie" />
+      <Button fx:id="effet" layoutX="213.0" layoutY="2.0" mnemonicParsing="false" onAction="#handleEffet" text="Effet" />
+      <ImageView fx:id="ivFiles2" fitHeight="321.0" fitWidth="296.0" layoutX="356.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
 
    </children>
 </AnchorPane>
