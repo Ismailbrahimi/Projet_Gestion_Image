@@ -4,50 +4,9 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion_image.HelloController">
    <children>
-      <MenuBar layoutY="-6.0" prefHeight="18.0" prefWidth="134.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-       <ImageView fitHeight="189.0" fitWidth="214.0" layoutX="14.0" layoutY="38.0">
-       <Image url="https://images.proxibid.com/AuctionImages/11132/208704/FullSize/f2f7bd2b755870e21431a46bcc20d8365509def9.jpg" />
-       </ImageView>
-       <ImageView fitHeight="189.0" fitWidth="214.0" layoutX="695.0" layoutY="38.0">
-           <Image url="https://images.proxibid.com/AuctionImages/11132/208704/FullSize/f2f7bd2b755870e21431a46bcc20d8365509def9.jpg" />
-       </ImageView>
-       <ImageView fitHeight="189.0" fitWidth="214.0" layoutX="241.0" layoutY="38.0">
-           <Image url="https://images.proxibid.com/AuctionImages/11132/208704/FullSize/f2f7bd2b755870e21431a46bcc20d8365509def9.jpg" />
-       </ImageView>
-       <ImageView fitHeight="189.0" fitWidth="214.0" layoutX="469.0" layoutY="38.0">
-           <Image url="https://images.proxibid.com/AuctionImages/11132/208704/FullSize/f2f7bd2b755870e21431a46bcc20d8365509def9.jpg" />
-       </ImageView>
-       <ImageView fitHeight="189.0" fitWidth="214.0" layoutX="14.0" layoutY="238.0">
-           <Image url="https://images.proxibid.com/AuctionImages/11132/208704/FullSize/f2f7bd2b755870e21431a46bcc20d8365509def9.jpg" />
-       </ImageView>
-       <ImageView fitHeight="189.0" fitWidth="214.0" layoutX="695.0" layoutY="238.0">
-           <Image url="https://images.proxibid.com/AuctionImages/11132/208704/FullSize/f2f7bd2b755870e21431a46bcc20d8365509def9.jpg" />
-       </ImageView>
-       <ImageView fitHeight="189.0" fitWidth="214.0" layoutX="241.0" layoutY="238.0">
-           <Image url="https://images.proxibid.com/AuctionImages/11132/208704/FullSize/f2f7bd2b755870e21431a46bcc20d8365509def9.jpg" />
-       </ImageView>
-       <ImageView fitHeight="189.0" fitWidth="214.0" layoutX="469.0" layoutY="238.0">
-           <Image url="https://images.proxibid.com/AuctionImages/11132/208704/FullSize/f2f7bd2b755870e21431a46bcc20d8365509def9.jpg" />
-       </ImageView>
+      <Button id="btn" fx:id="btnOpenImgFile" layoutY="1.0" mnemonicParsing="false" onAction="#handleBtnOpenImgFile" text="Importer une Image" />
+      <ImageView fx:id="ivFiles" fitHeight="440.0" fitWidth="891.0" layoutX="14.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>
