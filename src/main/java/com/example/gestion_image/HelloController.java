@@ -63,7 +63,8 @@ public class HelloController {
     //l3ezzi
     //fc.setInitialDirectory(new File("C:\\Users\\ps42\\IdeaProjects\\Gestion_Image\\Ressources"));
     fc.setInitialDirectory(new File("F:\\ProjetPOO\\Ressources"));
-    // zakie fc.setInitialDirectory(new File("C:\Users\z_aki\OneDrive\Bureau\Mes études\2020-2021 dirasa\Java\Projet_Gestion_Image\Ressources"));
+    // zakie
+    fc.setInitialDirectory(new File("C:\\Users\\z_aki\\OneDrive\\Bureau\\Mes études\\2020-2021 dirasa\\Java\\Projet_Gestion_Image\\Ressources"));
     fc.getExtensionFilters().clear();
     fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.gif"));
 
@@ -124,6 +125,7 @@ public class HelloController {
                 Color colorImgIN1 = img.getPixelReader().getColor(j,i) ;
                 Color colorImgOUT1 =new Color(colorImgIN1.getBlue(),colorImgIN1.getRed(),colorImgIN1.getGreen(),1);
                 imgOUT1.getPixelWriter().setColor(j,i,colorImgOUT1);
+                System.out.println("Pixel color at coordinates (" + j + "," + 0 + ") ");
             }
         }
         ivFiles.setImage(imgOUT1);
