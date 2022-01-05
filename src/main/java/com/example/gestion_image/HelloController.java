@@ -110,7 +110,6 @@ public class HelloController {
                 Color colorImgIN1 = img.getPixelReader().getColor(j,i) ;
                 Color colorImgOUT1 =new Color(colorImgIN1.getBlue(),colorImgIN1.getRed(),colorImgIN1.getGreen(),1);
                 imgOUT1.getPixelWriter().setColor(j,i,colorImgOUT1);
-                System.out.println("Pixel color at coordinates (" + j + "," + 0 + ") ");
             }
         }
         ivFiles.setImage(imgOUT1);
