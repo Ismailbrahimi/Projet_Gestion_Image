@@ -17,6 +17,10 @@ public class HelloController {
 
     //creation de l'objet filechooser
     public FileChooser fc = new FileChooser();
+    public  Image img;
+    int h;
+    int w;
+
 
     @FXML
     private Button btnOpenImgFile;
@@ -24,8 +28,7 @@ public class HelloController {
     @FXML
     private ImageView ivFiles;
 
-    @FXML
-    private ImageView ivFiles2;
+
 
     @FXML
     private Button myLeft;
@@ -60,8 +63,8 @@ public class HelloController {
     {
     fc.setTitle("Title");
     //l3ezzi
-    fc.setInitialDirectory(new File("C:\\Users\\ps42\\IdeaProjects\\Gestion_Image\\Ressources"));
-    // mo7çine fc.setInitialDirectory(new File("F:\ProjetPOO\Ressources"));
+    //fc.setInitialDirectory(new File("C:\\Users\\ps42\\IdeaProjects\\Gestion_Image\\Ressources"));
+    fc.setInitialDirectory(new File("F:\\ProjetPOO\\Ressources"));
     // zakie fc.setInitialDirectory(new File("C:\Users\z_aki\OneDrive\Bureau\Mes études\2020-2021 dirasa\Java\Projet_Gestion_Image\Ressources"));
     fc.getExtensionFilters().clear();
     fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.gif"));
@@ -70,6 +73,9 @@ public class HelloController {
     if(file!=null)
     {
         ivFiles.setImage(new Image(file.toURI().toString()));
+        img =new Image(file.toURI().toString());
+        h= (int) img.getHeight();
+        w= (int) img.getWidth();
     }
     else
     {
@@ -79,16 +85,11 @@ public class HelloController {
 
     public void handleNoireBlanc() {
 
-        Image imgIN = ivFiles.getImage();
-        int h= (int) imgIN.getHeight();
-        int w= (int) imgIN.getWidth();
-        System.out.println("H : "+h+" W : "+w);
-
         WritableImage imgOUT = new WritableImage(w,h);
 
         for(int i = 0; i < h; i++) {
             for(int j = 0; j < w; j++) {
-                Color colorImgIN = imgIN.getPixelReader().getColor(j,i) ;
+                Color colorImgIN = img.getPixelReader().getColor(j,i) ;
                 Color colorImgOUT = colorImgIN.grayscale();
                 imgOUT.getPixelWriter().setColor(j,i,colorImgOUT);
             }
@@ -98,65 +99,66 @@ public class HelloController {
 
     public void handleRGBtoBRG() {
 
-        Image imgIN1 = ivFiles.getImage();
-        int h= (int) imgIN1.getHeight();
-        int w= (int) imgIN1.getWidth();
-        System.out.println("H : "+h+" W : "+w);
 
         WritableImage imgOUT1 = new WritableImage(w,h);
 
         for(int i = 0; i < h; i++) {
             for(int j = 0; j < w; j++) {
-                Color colorImgIN1 = imgIN1.getPixelReader().getColor(j,i) ;
+                Color colorImgIN1 = img.getPixelReader().getColor(j,i) ;
                 Color colorImgOUT1 =new Color(colorImgIN1.getBlue(),colorImgIN1.getRed(),colorImgIN1.getGreen(),1);
                 imgOUT1.getPixelWriter().setColor(j,i,colorImgOUT1);
             }
         }
         ivFiles.setImage(imgOUT1);
     }
-    public void handleSepia() {
 
-        Image imgIN2 = ivFiles.getImage();
-        int h= (int) imgIN2.getHeight();
-        int w= (int) imgIN2.getWidth();
-        System.out.println("H : "+h+" W : "+w);
+    public void handleSepia() {
 
         WritableImage imgOUT2 = new WritableImage(w,h);
 
         for(int i = 0; i < h; i++) {
             for(int j = 0; j < w; j++)
             {
-                Color colorImgIN2 = imgIN2.getPixelReader().getColor(j,i) ;
-                int r =(int)colorImgIN2.getRed();
-                int g =(int)colorImgIN2.getGreen();
-                int b =(int)colorImgIN2.getBlue();
+                int pixel =img.getPixelReader().getArgb(j,i);
 
-                int tr =(int)(0.393*(r)+0.769*(g)+0.189*(b));
-                int tg =(int)(0.349*(r)+0.686*(g)+0.168*(b));
-                int tb =(int)(0.272*(r)+0.534*(g)+0.131*(b));
+                //Decomposer la combinaison RGB en decomposant la suite binaire de 32bits par 8bits chacune
+                int opacity = (pixel>>24)&0xff;
+                int red = (pixel>>16)&0xff;
+                int green= (pixel>>8)&0xff;
+                int blue = pixel&0xff;
 
-                //verification des conditions
-                if(tr>255)
+                Color colorImgIN = img.getPixelReader().getColor(j,i) ;
+
+                //Calculer la nouvelle combinaison RGB
+                int newRed =(int)(0.393*(red)+0.769*(green)+0.189*(blue));
+                int newGreen =(int)(0.349*(red)+0.686*(green)+0.168*(blue));
+                int newBlue =(int)(0.272*(red)+0.534*(green)+0.131*(blue));
+
+                //Conditions
+                if(newRed>255)
                 {
-                    r=255;
+                    red=255;
+                }else{
+                    red=newRed;
                 }
-                if(tg>255)
+                if(newGreen>255)
                 {
-                    g=tg;
+                    green=255;
+                }else{
+                    green=newGreen;
                 }
-                if(tb>255)
+                if(newBlue>255)
                 {
-                    b=255;
-                }
-                else
+                    blue=255;
+                }else
                 {
-                    b=tb;
+                    blue=newBlue;
                 }
 
+                //Recréer le pixel par la nouvelle combinaision RGB
+                pixel = (opacity<<24) | (red<<16) | (green<<8) | blue;
+                imgOUT2.getPixelWriter().setArgb(j,i,pixel);
 
-//push 2.0
-                Color colorImgOUT2 =new Color(tr,tg,tb,1);
-                imgOUT2.getPixelWriter().setColor(j,i,colorImgOUT2);
             }
         }
         ivFiles.setImage(imgOUT2);
