@@ -124,7 +124,7 @@ public class HelloController {
             {
                 int pixel =img.getPixelReader().getArgb(j,i);
 
-                //Decomposer la combinaison RGB en decomposant la suite binaire de 32bits par 8bits chacune
+                //Decomposer la combinaison RGB en decomposant la suite binaire de 32bits par 8 bits chacune
                 int opacity = (pixel>>24)&0xff;
                 int red = (pixel>>16)&0xff;
                 int green= (pixel>>8)&0xff;
