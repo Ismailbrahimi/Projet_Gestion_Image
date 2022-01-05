@@ -154,7 +154,7 @@ public class HelloController {
                 }
 
 
-
+//push 2.0
                 Color colorImgOUT2 =new Color(tr,tg,tb,1);
                 imgOUT2.getPixelWriter().setColor(j,i,colorImgOUT2);
             }
