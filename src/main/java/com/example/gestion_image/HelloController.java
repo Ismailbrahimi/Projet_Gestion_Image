@@ -19,7 +19,6 @@ public class HelloController {
     int h;
     int w;
 
-
     @FXML
     private Button btnOpenImgFile;
 
@@ -84,21 +83,7 @@ public class HelloController {
 
     public void handleOriginale() {
 
-        Image imgIN = ivFiles.getImage();
-        int h= (int) imgIN.getHeight();
-        int w= (int) imgIN.getWidth();
-        System.out.println("H : "+h+" W : "+w);
-
-        WritableImage imgOUT = new WritableImage(w,h);
-
-        for(int i = 0; i < h; i++) {
-            for(int j = 0; j < w; j++) {
-                Color colorImgIN = imgIN.getPixelReader().getColor(j,i) ;
-                Color colorImgOUT = colorImgIN;
-                imgOUT.getPixelWriter().setColor(j,i,colorImgOUT);
-            }
-        }
-        ivFiles.setImage(imgOUT);
+        ivFiles.setImage(img);
     }
     public void handleNoireBlanc() {
 
