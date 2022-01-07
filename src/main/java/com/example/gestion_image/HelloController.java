@@ -240,7 +240,7 @@ public class HelloController {
         ImageIO.write(bImg, "png", PfileOUT);
 
         File PfileIN = new File("PriwettIMAGE.jpg");
-
+        //
         Image PriwettIMAGE =new Image(PfileIN.toURI().toString());
         ivFiles.setImage(PriwettIMAGE);
     }
