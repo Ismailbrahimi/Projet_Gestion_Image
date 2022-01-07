@@ -6,7 +6,7 @@ public class Image
     private String modele ;
     private String couleur ;
     private String url;
-    private int annee ;
+    private String annee ;
 
     public String getMarque() {
         return marque;
@@ -40,11 +40,11 @@ public class Image
         this.url = url;
     }
 
-    public int getAnnee() {
+    public String getAnnee() {
         return annee;
     }
 
-    public void setAnnee(int annee) {
+    public void setAnnee(String annee) {
         this.annee = annee;
     }
 }

@@ -272,7 +272,7 @@ public class HelloController {
             boolean x=true;
 //            int i=0;
             for(com.example.gestion_image.Image p :images) {
-                if(p.getModele().equals(critere) || p.getMarque().equals(critere) || p.getCouleur().equals(critere) ){
+                if(p.getModele().equals(critere) || p.getMarque().equals(critere) || p.getCouleur().equals(critere)|| p.getAnnee().equals(critere) ){
 
                     System.out.println("Marque = "+p.getMarque()+" Modele = "+p.getModele()+" Couleur = "+p.getCouleur()+" Annee = "+ p.getAnnee()+"  - URL : "+p.getUrl());
                     String path = "Ressources\\"+p.getUrl();
