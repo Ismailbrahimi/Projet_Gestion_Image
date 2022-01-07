@@ -5,6 +5,7 @@ public class Image
     private String marque;
     private String modele ;
     private String couleur ;
+    private String url;
     private int annee ;
 
     public String getMarque() {
@@ -29,6 +30,14 @@ public class Image
 
     public void setCouleur(String couleur) {
         this.couleur = couleur;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public int getAnnee() {

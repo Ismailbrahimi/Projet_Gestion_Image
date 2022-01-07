@@ -1,21 +1,28 @@
 package com.example.gestion_image;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
+import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 
+import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 import javax.imageio.ImageIO;
 
 import java.io.File;
+import java.util.List;
 
 import static java.lang.Math.round;
 
@@ -26,8 +33,11 @@ public class HelloController {
     public FileChooser fc = new FileChooser();
     public File file;
     public  Image img;
-    int h;
-    int w;
+    public TextField recherche;
+    public GridPane gridpane;
+    int h ;
+    int w ;
+
 
     @FXML
     private Button btnOpenImgFile;
@@ -43,6 +53,7 @@ public class HelloController {
 
     @FXML
     private Button myRight;
+
 
     @FXML
     public void rotateImageRight()
@@ -247,4 +258,51 @@ public class HelloController {
     }
 
 
+    public void handleRecherche() {
+
+        try{
+
+            String critere = recherche.getText();
+            System.out.println("Recherche  : "+critere);
+            ObjectMapper mapper = new XmlMapper();
+            InputStream inputStream = new FileInputStream(new File("Ressources\\Image.xml"));
+            TypeReference<List<com.example.gestion_image.Image>> typeReference = new TypeReference<List<com.example.gestion_image.Image>>() {};
+            List<com.example.gestion_image.Image> images = mapper.readValue(inputStream, typeReference);
+
+            boolean x=true;
+//            int i=0;
+            for(com.example.gestion_image.Image p :images) {
+                if(p.getModele().equals(critere) || p.getMarque().equals(critere) || p.getCouleur().equals(critere) ){
+
+                    System.out.println("Marque = "+p.getMarque()+" Modele = "+p.getModele()+" Couleur = "+p.getCouleur()+" Annee = "+ p.getAnnee()+"  - URL : "+p.getUrl());
+                    String path = "Ressources\\"+p.getUrl();
+                    file = new File(path);
+
+                  //  gridpane.add(new ImageView(new Image(file.toURI().toString())),i,i);
+
+                    ivFiles.setImage(new Image(file.toURI().toString()));
+
+                    //on affecte les infos de l'image aux variable pour appliquer les flters
+                    img = new Image(file.toURI().toString());
+                    h= (int) img.getHeight();
+                    w= (int) img.getWidth();
+                    x=false;
+                }
+                // i++;
+                //
+            }
+            if(x){
+                File f = new File("Ressources\\error.png");
+                ivFiles.setImage(new Image(f.toURI().toString()));
+            }
+
+
+            inputStream.close();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+
+    }
 }

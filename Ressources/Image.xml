@@ -1,14 +1,30 @@
 <images>
 <image>
-<marque>Porsches</marque>
+<marque>FerrariGTC</marque>
 <modele>911</modele>
 <couleur>Rouge</couleur>
 <annee>1069</annee>
+    <url>FerrariGTC.jpg</url>
 </image>
+
 <image>
-<marque>Mercedes</marque>
+<marque>fiston</marque>
 <modele>Class S</modele>
 <couleur>Grise</couleur>
 <annee>2002</annee>
+    <url>fiston.jpg</url>
+
 </image>
+
+
+    <image>
+    <marque>Peugeot</marque>
+    <modele>208</modele>
+    <couleur>Rouge</couleur>
+    <annee>2012</annee>
+        <url>peugeot.jpg</url>
+
+    </image>
+
+
 </images>
