@@ -21,7 +21,6 @@ public class JaxbExampleFruit1 {
 
             //jaxbContext = org.eclipse.persistence.jaxb.JAXBContextFactory
                     //.createContext(new Class[]{Fruit.class}, null);
-            //
             jaxbContext= JAXBContext.newInstance(Fruit.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
