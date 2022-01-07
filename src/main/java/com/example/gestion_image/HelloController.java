@@ -72,7 +72,7 @@ public class HelloController {
     fc.setTitle("Title");
     //l3ezzi
 
-    fc.setInitialDirectory(new File("C:\\Users\\ps42\\IdeaProjects\\Gestion_Image\\Ressources"));
+    fc.setInitialDirectory(new File("Ressources"));
     //fc.setInitialDirectory(new File("F:\\ProjetPOO\\Ressources"));
     // zakie fc.setInitialDirectory(new File("C:\Users\z_aki\OneDrive\Bureau\Mes études\2020-2021 dirasa\Java\Projet_Gestion_Image\Ressources"));
     fc.getExtensionFilters().clear();
@@ -177,7 +177,6 @@ public class HelloController {
         }
         ivFiles.setImage(imgOUT2);
     }
-
     // -----------------------------
     // cette methode nous retourne le niveau du Gris
     public  int  niveauGris(int couleur) {
