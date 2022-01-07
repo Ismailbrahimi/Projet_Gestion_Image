@@ -4,7 +4,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion_image.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion_image.HelloController">
    <children>
       <Button id="btn" fx:id="btnOpenImgFile" layoutX="700.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleBtnOpenImgFile" text="Importer une Image" />
       <ImageView fx:id="ivFiles" fitHeight="243.0" fitWidth="341.0" layoutX="14.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
@@ -13,7 +13,7 @@
       <Button fx:id="myLeft" layoutX="701.0" layoutY="75.0" mnemonicParsing="false" onAction="#rotateImageLeft" text="Gauche" />
       <Label layoutX="701.0" layoutY="120.0" text="Effet mirroir :" />
       <Button fx:id="mySymetrie" layoutX="701.0" layoutY="149.0" mnemonicParsing="false" onAction="#handleSymetrie" text="Symetrie" />
-      <ListView layoutX="702.0" layoutY="209.0" prefHeight="160.0" prefWidth="200.0">
+      <ListView layoutX="702.0" layoutY="209.0" prefHeight="170.0" prefWidth="200.0" AnchorPane.bottomAnchor="165.0">
          <Button fx:id="originale" layoutX="689.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleOriginale" prefHeight="25.0" prefWidth="183.0" text="Originale" />
          <Button fx:id="noiretblanc" layoutX="689.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleNoireBlanc" prefHeight="25.0" prefWidth="183.0" text="Noir et Blanc" />
          <Button fx:id="sepia" layoutX="504.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSepia" prefHeight="26.0" prefWidth="181.0" text="Sepia" />
