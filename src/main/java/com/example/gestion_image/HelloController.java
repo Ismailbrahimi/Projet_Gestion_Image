@@ -107,7 +107,7 @@ public class HelloController {
                 Color colorImgOUT = colorImgIN.grayscale();
                 imgOUT.getPixelWriter().setColor(j,i,colorImgOUT);
             }
-        }
+        }//
         ivFiles.setImage(imgOUT);
     }
 
