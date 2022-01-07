@@ -19,6 +19,7 @@ import java.io.File;
 
 import static java.lang.Math.round;
 
+
 public class HelloController {
 
     //creation de l'objet filechooser
@@ -70,10 +71,10 @@ public class HelloController {
     {
     fc.setTitle("Title");
     //l3ezzi
-    //fc.setInitialDirectory(new File("C:\\Users\\ps42\\IdeaProjects\\Gestion_Image\\Ressources"));
+
+    fc.setInitialDirectory(new File("C:\\Users\\ps42\\IdeaProjects\\Gestion_Image\\Ressources"));
     //fc.setInitialDirectory(new File("F:\\ProjetPOO\\Ressources"));
-    // zakie
-    fc.setInitialDirectory(new File("C:\\Users\\z_aki\\OneDrive\\Bureau\\Mes études\\2020-2021 dirasa\\Java\\Projet_Gestion_Image\\Ressources"));
+    // zakie fc.setInitialDirectory(new File("C:\Users\z_aki\OneDrive\Bureau\Mes études\2020-2021 dirasa\Java\Projet_Gestion_Image\Ressources"));
     fc.getExtensionFilters().clear();
     fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.gif"));
 
