@@ -21,14 +21,24 @@
          <Button fx:id="Prewitt" layoutX="504.0" layoutY="284.0" mnemonicParsing="false" onAction="#handlePrewitt" prefHeight="26.0" prefWidth="182.0" text="Prewitt wla Sobel who knows" />
       </ListView>
       <Label layoutX="700.0" layoutY="186.0" text="Filtres :" />
-      <TextField layoutX="281.0" layoutY="14.0" />
-      <Button layoutX="434.0" layoutY="14.0" mnemonicParsing="false" text="Rechercher" />
-      <TextField layoutX="74.0" layoutY="376.0" />
+      <Button layoutX="434.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleRecherche" text="Rechercher" />
       <Label layoutX="17.0" layoutY="379.0" text="Marque :" />
       <Label layoutX="17.0" layoutY="415.0" text="Modele :" />
       <Label layoutX="17.0" layoutY="450.0" prefWidth="53.0" text="Couleur :" />
       <TextField layoutX="74.0" layoutY="412.0" />
       <TextField layoutX="74.0" layoutY="447.0" />
+      <TextField fx:id="recherche" layoutX="246.0" layoutY="14.0" />
+      <GridPane fx:id="gridpane" layoutX="382.0" layoutY="316.0" prefHeight="217.0" prefWidth="308.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="122.0" minHeight="10.0" prefHeight="79.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="100.0" minHeight="10.0" prefHeight="76.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="62.0" minHeight="0.0" prefHeight="62.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
 
    </children>
 </AnchorPane>
