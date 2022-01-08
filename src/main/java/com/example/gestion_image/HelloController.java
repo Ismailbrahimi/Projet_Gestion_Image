@@ -83,7 +83,9 @@ public class HelloController {
     @FXML
     public void handleBtnOpenImgFile(ActionEvent event)
     {
-    fc.setTitle("Title");
+        listV.setVisible(false);
+
+        fc.setTitle("Title");
     //l3ezzi
 
     fc.setInitialDirectory(new File("Ressources"));
