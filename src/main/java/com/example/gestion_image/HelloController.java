@@ -296,9 +296,6 @@ public class HelloController {
 
                     listV.getItems().add(p);
                     file = new File(path);
-                    listV.setOnMouseClicked(event -> {
-                        System.out.println(event);
-                    });
                     ivFiles.setImage(new Image(file.toURI().toString()));
 
                     //on affecte les infos de l'image aux variable pour appliquer les flters
