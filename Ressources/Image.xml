@@ -56,4 +56,46 @@
         <url>LamboDiablo.jpg</url>
     </image>
 
+    <image>
+        <marque>Mclaren</marque>
+        <modele>MP4/4</modele>
+        <couleur>Blanche</couleur>
+        <annee>1994</annee>
+        <url>MclarenMP4.jpg</url>
+    </image>
+
+    <image>
+        <marque>Jaguar</marque>
+        <modele>Fx</modele>
+        <couleur>Noire</couleur>
+        <annee>2000</annee>
+        <url>Jaguar.jpg</url>
+    </image>
+
+    <image>
+        <marque>Isdera</marque>
+        <modele>GL30</modele>
+        <couleur>Grise</couleur>
+        <annee>2000</annee>
+        <url>Isdera.jpg</url>
+    </image>
+    <image>
+        <marque>Ferrari</marque>
+        <modele>F50</modele>
+        <couleur>Rouge</couleur>
+        <annee>2005</annee>
+        <url>FerrariF50.jpg</url>
+    </image>
+    <image>
+        <marque>Ferrari</marque>
+        <modele>Enzo</modele>
+        <couleur>Noire</couleur>
+        <annee>2006</annee>
+        <url>FerrariEnzo.jpg</url>
+    </image>
+
+
+
+
+
 </images>

@@ -17,7 +17,7 @@
          <Button fx:id="originale" layoutX="689.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleOriginale" prefHeight="25.0" prefWidth="183.0" text="Originale" />
          <Button fx:id="noiretblanc" layoutX="689.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleNoireBlanc" prefHeight="25.0" prefWidth="183.0" text="Noir et Blanc" />
          <Button fx:id="sepia" layoutX="504.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSepia" prefHeight="26.0" prefWidth="181.0" text="Sepia" />
-         <Button fx:id="RGBtoBGR" layoutX="504.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleRGBtoBRG" prefHeight="26.0" prefWidth="182.0" text="RGB to BGR" />
+         <Button fx:id="RGBtoBRG" layoutX="504.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleRGBtoBRG" prefHeight="26.0" prefWidth="182.0" text="RGB to BGR" />
          <Button fx:id="Prewitt" layoutX="504.0" layoutY="284.0" mnemonicParsing="false" onAction="#handlePrewitt" prefHeight="26.0" prefWidth="182.0" text="Prewitt wla Sobel who knows" />
       </ListView>
       <Label layoutX="700.0" layoutY="186.0" text="Filtres :" />
