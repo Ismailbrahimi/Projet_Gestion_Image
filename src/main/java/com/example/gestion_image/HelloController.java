@@ -128,7 +128,8 @@ public class HelloController {
     }
 
     public void handleRGBtoBRG() {
-
+    try
+    {
         WritableImage imgOUT1 = new WritableImage(w,h);
 
         for(int i = 0; i < h; i++) {
@@ -139,10 +140,15 @@ public class HelloController {
             }
         }
         ivFiles.setImage(imgOUT1);
+    }catch (Exception e)
+    {
+        System.out.println(e.getMessage());
+    }
     }
 
     public void handleSepia() {
-
+    try
+    {
         WritableImage imgOUT2 = new WritableImage(w,h);
 
         for(int i = 0; i < h; i++) {
@@ -191,6 +197,10 @@ public class HelloController {
             }
         }
         ivFiles.setImage(imgOUT2);
+    }catch (Exception e)
+    {
+        System.out.println(e.getMessage());
+    }
     }
     // -----------------------------
     // cette methode nous retourne le niveau du Gris
@@ -203,7 +213,8 @@ public class HelloController {
     }
 
     public void handlePrewitt() throws IOException {
-
+    try
+    {
         //lire l'image en format Buffered
         BufferedImage bImg = ImageIO.read(file);
         int grade = -1;
@@ -259,6 +270,10 @@ public class HelloController {
         //
         Image PriwettIMAGE =new Image(PfileIN.toURI().toString());
         ivFiles.setImage(PriwettIMAGE);
+    }catch (Exception e)
+    {
+        System.out.println(e.getMessage());
+    }
     }
 
 
