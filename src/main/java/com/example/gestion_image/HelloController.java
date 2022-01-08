@@ -44,16 +44,38 @@ public class HelloController {
 
     @FXML
     private Button btnOpenImgFile;
-
     @FXML
     private ImageView ivFiles;
-
     @FXML
     private ImageView ivFiles2;
 
     @FXML
-    private Button myLeft;
+    private ImageView img1;
+    @FXML
+    private ImageView img2;
+    @FXML
+    private ImageView img3;
+    @FXML
+    private ImageView img4;
+    @FXML
+    private ImageView img5;
+    @FXML
+    private ImageView img6;
+    @FXML
+    private ImageView img7;
+    @FXML
+    private ImageView img8;
+    @FXML
+    private ImageView img9;
+    @FXML
+    private ImageView img10;
+    @FXML
+    private ImageView img11;
+    @FXML
+    private ImageView img12;
 
+    @FXML
+    private Button myLeft;
     @FXML
     private Button myRight;
 
