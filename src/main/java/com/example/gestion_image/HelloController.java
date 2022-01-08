@@ -264,6 +264,7 @@ public class HelloController {
     public void handleRecherche() {
 
         try{
+
             listV.getItems().clear();
 
             String critere = recherche.getText();
@@ -273,8 +274,11 @@ public class HelloController {
             TypeReference<List<com.example.gestion_image.Image>> typeReference = new TypeReference<List<com.example.gestion_image.Image>>() {};
             List<com.example.gestion_image.Image> images = mapper.readValue(inputStream, typeReference);
 
+            int i=0;
             boolean x=true;
+
             for(com.example.gestion_image.Image p :images) {
+
                 if(p.getModele().equals(critere) || p.getMarque().equals(critere) || p.getCouleur().equals(critere)|| p.getAnnee().equals(critere) ){
 
                     System.out.println("Marque = "+p.getMarque()+" Modele = "+p.getModele()+" Couleur = "+p.getCouleur()+" Annee = "+ p.getAnnee()+"  - URL : "+p.getUrl());
@@ -303,6 +307,11 @@ public class HelloController {
                     h= (int) img.getHeight();
                     w= (int) img.getWidth();
                     x=false;
+
+                    if(i>0){
+                        listV.setVisible(true);
+                    }
+                    i++;
                 }
 
             }
