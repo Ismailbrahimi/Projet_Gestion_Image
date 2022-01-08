@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="680.0" prefWidth="1240.0" style="-fx-background-color: AliceBlue" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion_image.HelloController">
    <children>
-      <ImageView fx:id="img1" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../../Ressources/FerrariEnzo.jpg" /></image></ImageView>
+      <ImageView fx:id="img1" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true"><Image url="@../../../../../../Ressources/FerrariEnzo.jpg" /></ImageView>
       <ImageView fx:id="img2" fitHeight="150.0" fitWidth="200.0" layoutX="360.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../../Ressources/FerrariF40.jpg" /></image></ImageView>
       <ImageView fx:id="img3" fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../../Ressources/FerrariF50.jpg" /></image></ImageView>
       <ImageView fx:id="img4" fitHeight="150.0" fitWidth="200.0" layoutX="960.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../../Ressources/FerrariGTC.jpg" /></image></ImageView>
