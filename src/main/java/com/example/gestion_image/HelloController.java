@@ -206,6 +206,7 @@ public class HelloController {
                         int newGreen = (int) (0.349 * (red) + 0.686 * (green) + 0.168 * (blue));
                         int newBlue = (int) (0.272 * (red) + 0.534 * (green) + 0.131 * (blue));
 
+
                         //Conditions
                         if (newRed > 255) {
                             red = 255;
