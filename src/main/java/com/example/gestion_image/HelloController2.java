@@ -43,6 +43,7 @@ public class HelloController2 {
 
     private AnchorPane listImg;
 
+    //redirection
        public void redirectToFilters(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
            ImageView iv = (ImageView) mouseEvent.getSource();
            System.out.println(" IMAGE VIEW : "+iv.getImage());
