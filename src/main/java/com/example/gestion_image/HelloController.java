@@ -40,9 +40,10 @@ import static java.lang.Math.round;
 
 public class HelloController {
 
-    //creation de l'objet filechooser
+
     public Parent fxml;
     public AnchorPane anchor;
+    //creation de l'objet filechooser
     public FileChooser fc = new FileChooser();
     public File file;
     public  Image img;
@@ -76,6 +77,7 @@ public class HelloController {
 
 
     public void setPreloadedImage(Image pic){
+        //Passer l'image a l'interface accueil
         String old = pic.getUrl().toString();
         String newt = old.replace("file:/","").replace("/","\\");
 
@@ -93,8 +95,8 @@ public class HelloController {
     @FXML
     public void rotateImageRight()
     {
+        //rotation a droit en incrementant avec 90 degree
         if(!error) {
-            System.out.println("File from : "+file.toString());
             ivFiles.setRotate(ivFiles.getRotate() + 90);
         }
     }
@@ -102,6 +104,7 @@ public class HelloController {
     @FXML
     public void rotateImageLeft()
     {
+        //rotation a droit en decrementant avec 90 degree
         if(!error) {
             ivFiles.setRotate(ivFiles.getRotate() - 90);
         }
@@ -109,6 +112,7 @@ public class HelloController {
 
     @FXML
     public void handleSymetrie() {
+        //methode de symetrie axiale
         if(!error) {
             if (ivFiles.getScaleX() == 1) {
                 ivFiles.setScaleX(-1);
@@ -125,6 +129,7 @@ public class HelloController {
         listV.setVisible(false);
         fc.setTitle("Title");
 
+        //Utilisation du filechooser pour importer une image d'un fichier defini
     fc.setInitialDirectory(new File("Ressources"));
     fc.getExtensionFilters().clear();
     fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.gif"));
@@ -144,6 +149,7 @@ public class HelloController {
     }
 
     public void handleOriginale() {
+        //methode pour re afficher l'image originale importee
         if(!error) {
 
             ivFiles.setImage(img);
@@ -151,6 +157,7 @@ public class HelloController {
     }
 
     public void handleNoireBlanc() throws FileNotSelectedException{
+        //methode de filtre noir et blanc
         if(!error) {
             try {
                 WritableImage imgOUT = new WritableImage(w, h);
@@ -169,6 +176,7 @@ public class HelloController {
     }
 
     public void handleRGBtoBRG() {
+        //methode pour passage d'une image avec des pixels RGB a BRG
         if(!error) {
             try {
                 WritableImage imgOUT1 = new WritableImage(w, h);
@@ -188,6 +196,7 @@ public class HelloController {
     }
 //sepia
     public void handleSepia() {
+        //methode pour le filtre sepia
         if(!error) {
             try {
                 WritableImage imgOUT2 = new WritableImage(w, h);
@@ -316,7 +325,7 @@ public class HelloController {
     }
 
     public void handleRecherche() {
-
+        //methode de recherche des image en utilisant le fichier XML qui contient les metadata
         try{
             listV.setVisible(false);
             listV.getItems().clear();
@@ -332,6 +341,7 @@ public class HelloController {
             boolean x=true;
 
             for(com.example.gestion_image.Image p :images) {
+                //comparaison avec le critere saisi dans la barre de recherche
                 if(p.getModele().equals(critere) || p.getMarque().equals(critere) || p.getCouleur().equals(critere)|| p.getAnnee().equals(critere) ){
 
                     System.out.println("Marque = "+p.getMarque()+" Modele = "+p.getModele()+" Couleur = "+p.getCouleur()+" Annee = "+ p.getAnnee()+"  - URL : "+p.getUrl());
@@ -428,6 +438,7 @@ public class HelloController {
     }
     public void redirectToMain(ActionEvent event) throws IOException
     {
+        //redirection d'une interface a une autre
         root = FXMLLoader.load(getClass().getResource("Main.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
