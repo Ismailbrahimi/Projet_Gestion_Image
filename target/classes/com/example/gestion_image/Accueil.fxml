@@ -23,7 +23,7 @@
       <Label layoutX="700.0" layoutY="186.0" text="Filtres :" />
       <Button layoutX="424.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleRecherche" text="Rechercher" />
       <TextField fx:id="recherche" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="379.0" />
-      <ListView fx:id="listV" layoutX="14.0" layoutY="44.0" prefHeight="67.0" prefWidth="379.0" />
+      <ListView fx:id="listV" layoutX="14.0" layoutY="44.0" prefHeight="67.0"  onMouseClicked="#handleChoice" prefWidth="379.0" />
 
    </children>
 </AnchorPane>
