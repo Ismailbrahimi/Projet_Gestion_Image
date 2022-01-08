@@ -282,7 +282,9 @@ public class HelloController {
                     String choix= p.getMarque()+" - "+ p.getMarque()+" - "+p.getCouleur()+" - "+p.getAnnee();
                     listV.getItems().add(p);
                     file = new File(path);
-
+                    listV.setOnMouseClicked(event -> {
+                        System.out.println(event);
+                    });
                     ivFiles.setImage(new Image(file.toURI().toString()));
 
                     //on affecte les infos de l'image aux variable pour appliquer les flters
