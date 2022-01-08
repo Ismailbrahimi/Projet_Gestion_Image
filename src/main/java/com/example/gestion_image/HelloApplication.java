@@ -20,6 +20,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         try{
             FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("Main.fxml"));
+
             Scene scene = new Scene(fxmlLoader.load(), 1240, 680);
             stage.setTitle("Gestion d'image");
             stage.setScene(scene);

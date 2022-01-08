@@ -5,6 +5,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -15,7 +18,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
+import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
@@ -30,6 +36,8 @@ import static java.lang.Math.round;
 public class HelloController {
 
     //creation de l'objet filechooser
+    public Parent fxml;
+    public AnchorPane anchor;
     public FileChooser fc = new FileChooser();
     public File file;
     public  Image img;
@@ -37,6 +45,8 @@ public class HelloController {
     public TextField rechercheMain;
     public GridPane gridpane;
     public ListView listV;
+    public String selected;
+
     int h ;
     int w ;
     boolean error=false;
@@ -45,11 +55,12 @@ public class HelloController {
     @FXML
     private Button btnOpenImgFile;
     @FXML
-    private ImageView ivFiles;
+    public ImageView ivFiles;
     @FXML
     private ImageView ivFiles2;
 
-
+    @FXML
+    public ImageView img1;
 
     @FXML
     private Button myLeft;
@@ -57,6 +68,23 @@ public class HelloController {
     private Button myRight;
     @FXML
     private AnchorPane listImg;
+
+
+    public void setPreloadedImage(String url){
+        file = new File(url);
+        img = new Image(file.toURI().toString());
+        h=(int) img.getHeight();
+        w= (int) img.getWidth();
+        ivFiles.setImage(img);
+    }
+
+    public void setPreloadedImage2(Image pic){
+      //  file = new File(url);
+        img = pic;
+        h=(int) img.getHeight();
+        w= (int) img.getWidth();
+        ivFiles.setImage(img);
+    }
 
     @FXML
     public void rotateImageRight()
@@ -216,11 +244,16 @@ public class HelloController {
     }
 
 
+//    public BufferedImage imgToBufferedimg(Image pic){
+//
+//    }
+
     public void handlePrewitt() throws IOException {
         if(!error) {
             try {
                 //lire l'image en format Buffered
                 BufferedImage bImg = ImageIO.read(file);
+               // BufferedImage bImg = (ToolkitImage) img;
                 int grade = -1;
                 int[][] PriwettColors = new int[w][h];
                 double echelle = 0;
@@ -339,7 +372,7 @@ public class HelloController {
                 File errorf = new File("Ressources\\error.png");
                 error=true;
                 ivFiles.setImage(new Image(errorf.toURI().toString()));
-                System.out.println(ivFiles.getImage().equals(new Image(errorf.toURI().toString())));
+
 
             }
 
@@ -352,6 +385,7 @@ public class HelloController {
         }
 
     }
+
     public void handleRechercheMain()
     {
     try {
@@ -389,11 +423,6 @@ public class HelloController {
         h= (int) img.getHeight();
         w= (int) img.getWidth();
 
-
-
     }
 
-//    public void redirectToFilters(MouseEvent mouseEvent) {
-//        System.out.println(mouseEvent);
-//    }
 }
