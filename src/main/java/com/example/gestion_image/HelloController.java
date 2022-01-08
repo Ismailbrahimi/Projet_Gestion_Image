@@ -244,9 +244,7 @@ public class HelloController {
     }
 
 
-//    public BufferedImage imgToBufferedimg(Image pic){
-//
-//    }
+
 
     public void handlePrewitt() throws IOException {
         if(!error) {
