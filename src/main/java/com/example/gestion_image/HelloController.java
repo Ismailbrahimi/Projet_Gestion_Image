@@ -318,8 +318,10 @@ public class HelloController {
 
             }
             if(x){
+                listV.setVisible(true);
                 File f = new File("Ressources\\error.png");
                 ivFiles.setImage(new Image(f.toURI().toString()));
+
             }
 
 
