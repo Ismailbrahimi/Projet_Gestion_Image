@@ -294,7 +294,7 @@ public class HelloController {
                             if (empty || p == null || p.getMarque() == null) {
                                 setText(null);
                             } else {
-                                String choix= p.getMarque()+" - "+ p.getMarque()+" - "+p.getCouleur()+" - "+p.getAnnee();
+                                String choix= p.getMarque()+" - "+ p.getModele()+" - "+p.getCouleur()+" - "+p.getAnnee();
                                 setText(choix);
                             }
                         }

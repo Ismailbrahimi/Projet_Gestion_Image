@@ -24,4 +24,36 @@
 
     </image>
 
+    <image>
+        <marque>Nissan</marque>
+        <modele>GTR</modele>
+        <couleur>nOIRE</couleur>
+        <annee>2010</annee>
+        <url>NissanGTR.jpg</url>
+
+    </image>
+
+    <image>
+        <marque>Mclaren</marque>
+        <modele>F1</modele>
+        <couleur>Orange</couleur>
+        <annee>2002</annee>
+        <url>MclarenF1.jpg</url>
+    </image>
+
+    <image>
+        <marque>lamborghini</marque>
+        <modele>Countach</modele>
+        <couleur>Rouge</couleur>
+        <annee>1999</annee>
+        <url>LamboCount.jpg</url>
+    </image>
+    <image>
+        <marque>lamborghini</marque>
+        <modele>Diablo</modele>
+        <couleur>Rouge</couleur>
+        <annee>2005</annee>
+        <url>LamboDiablo.jpg</url>
+    </image>
+
 </images>
