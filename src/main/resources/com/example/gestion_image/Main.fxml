@@ -3,35 +3,42 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="anchor" prefHeight="680.0" prefWidth="1240.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion_image.HelloController2">
    <children>
 
-      <ImageView fx:id="img1" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="97.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/FerrariEnzo.jpg" /></image></ImageView>
+      <ImageView fx:id="img1" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="97.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/FerrariEnzo.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img2" fitHeight="150.0" fitWidth="200.0" layoutX="360.0" layoutY="97.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/FerrariF40.jpg" /></image></ImageView>
+      <ImageView fx:id="img2" fitHeight="150.0" fitWidth="200.0" layoutX="360.0" layoutY="97.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/FerrariF40.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img3" fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="97.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/FerrariF50.jpg" /></image></ImageView>
+      <ImageView fx:id="img3" fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="97.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/FerrariF50.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img4" fitHeight="150.0" fitWidth="200.0" layoutX="960.0" layoutY="97.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/FerrariGTC.jpg" /></image></ImageView>
+      <ImageView fx:id="img4" fitHeight="150.0" fitWidth="200.0" layoutX="960.0" layoutY="97.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/FerrariGTC.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img5" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="297.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/MclarenF1.jpg" /></image></ImageView>
+      <ImageView fx:id="img5" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="297.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/MclarenF1.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img6" fitHeight="150.0" fitWidth="200.0" layoutX="360.0" layoutY="297.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/MclarenMP4.jpg" /></image></ImageView>
+      <ImageView fx:id="img6" fitHeight="150.0" fitWidth="200.0" layoutX="360.0" layoutY="297.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/MclarenMP4.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img7" fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="297.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/LamboCount.jpg" /></image></ImageView>
+      <ImageView fx:id="img7" fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="297.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/LamboCount.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img8" fitHeight="150.0" fitWidth="200.0" layoutX="960.0" layoutY="297.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/LamboDiablo.jpg" /></image></ImageView>
+      <ImageView fx:id="img8" fitHeight="150.0" fitWidth="200.0" layoutX="960.0" layoutY="297.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/LamboDiablo.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img9" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="497.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/Jaguar.jpg" /></image></ImageView>
+      <ImageView fx:id="img9" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="497.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/Jaguar.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img10" fitHeight="150.0" fitWidth="200.0" layoutX="360.0" layoutY="497.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/Isdera.jpg" /></image></ImageView>
+      <ImageView fx:id="img10" fitHeight="150.0" fitWidth="200.0" layoutX="360.0" layoutY="497.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/Isdera.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img11" fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="497.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/NissanGTR.jpg" /></image></ImageView>
+      <ImageView fx:id="img11" fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="497.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/NissanGTR.jpg" /></image></ImageView>
 
-      <ImageView fx:id="img12" fitHeight="150.0" fitWidth="200.0" layoutX="960.0" layoutY="497.0" pickOnBounds="true" onMouseClicked="#redirectToFilters" preserveRatio="true"><image><Image url="@../../../../../Ressources/fiston.jpg" /></image></ImageView>
-
-      <Button layoutX="712.0" layoutY="14.0" mnemonicParsing="false" text="Rechercher" />
-      <TextField layoutX="452.0" layoutY="14.0" prefHeight="26.0" prefWidth="253.0" />
+      <ImageView fx:id="img12" fitHeight="150.0" fitWidth="200.0" layoutX="960.0" layoutY="497.0" onMouseClicked="#redirectToFilters" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../Ressources/fiston.jpg" /></image></ImageView>
+      <Label layoutX="482.0" layoutY="14.0" text="Veuillez choisir une image :">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="484.0" layoutY="662.0" text="© 2022 AJLI-BRAHIMI-AIT BOUKDIR All Rights Reserved" textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font></Label>
    </children>
 </AnchorPane>

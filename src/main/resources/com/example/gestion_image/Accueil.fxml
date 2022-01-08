@@ -3,32 +3,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane fx:id="anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1240.0" style="-fx-background-color:AliceBlue;" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion_image.HelloController">
    <children>
 
       <ImageView fx:id="ivFiles" fitHeight="497.0" fitWidth="933.0" layoutX="14.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" />
 
-      <Button layoutX="424.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleRecherche" text="Rechercher" />
-      <TextField fx:id="recherche" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="379.0" />
+      <Button layoutX="411.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleRecherche" text="Rechercher" />
+      <TextField fx:id="recherche" layoutX="14.0" layoutY="14.0" prefHeight="26.0" prefWidth="379.0" promptText="Effectuez une recherche" />
       <ListView fx:id="listV" layoutX="14.0" layoutY="44.0" onMouseClicked="#handleChoice" prefHeight="103.0" prefWidth="379.0" visible="false" />
       <Pane fx:id="pane" layoutX="992.0" layoutY="-9.0" prefHeight="698.0" prefWidth="250.0">
          <children>
-            <Button id="btn" fx:id="btnOpenImgFile" layoutX="10.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBtnOpenImgFile" text="Importer une Image" />
-            <Label layoutX="10.0" layoutY="50.0" text="Effectuer un rotation :" />
-            <Label layoutX="10.0" layoutY="120.0" text="Effet mirroir :" />
-            <Button fx:id="myRight" layoutX="80.0" layoutY="75.0" mnemonicParsing="false" onAction="#rotateImageRight" text="Droite " />
-            <Button fx:id="myLeft" layoutX="10.0" layoutY="75.0" mnemonicParsing="false" onAction="#rotateImageLeft" text="Gauche" />
-            <Button fx:id="mySymetrie" layoutX="10.0" layoutY="149.0" mnemonicParsing="false" onAction="#handleSymetrie" text="Symetrie" />
-            <ListView layoutX="10.0" layoutY="215.6" prefHeight="162.0" prefWidth="200.0" style="-fx-alignment: center" AnchorPane.bottomAnchor="320.79999999999995">
+            <Button id="btn" fx:id="btnOpenImgFile" layoutX="10.0" layoutY="24.0" mnemonicParsing="false" onAction="#handleBtnOpenImgFile" text="Importer une Image" />
+            <Label layoutX="10.0" layoutY="61.0" text="Effectuer un rotation :" />
+            <Label layoutX="10.0" layoutY="131.0" text="Effet mirroir :" />
+            <Button fx:id="myRight" layoutX="80.0" layoutY="86.0" mnemonicParsing="false" onAction="#rotateImageRight" text="Droite " />
+            <Button fx:id="myLeft" layoutX="10.0" layoutY="86.0" mnemonicParsing="false" onAction="#rotateImageLeft" text="Gauche" />
+            <Button fx:id="mySymetrie" layoutX="10.0" layoutY="160.0" mnemonicParsing="false" onAction="#handleSymetrie" text="Symetrie" />
+            <ListView layoutX="10.0" layoutY="226.6" prefHeight="162.0" prefWidth="200.0" style="-fx-alignment: center" AnchorPane.bottomAnchor="309.79999999999995">
                <Button fx:id="originale" layoutX="689.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleOriginale" prefHeight="25.0" prefWidth="183.0" text="Originale" />
                <Button fx:id="noiretblanc" layoutX="689.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleNoireBlanc" prefHeight="25.0" prefWidth="183.0" text="Noir et Blanc" />
                <Button fx:id="sepia" layoutX="504.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleSepia" prefHeight="26.0" prefWidth="181.0" text="Sepia" />
                <Button fx:id="RGBtoBRG" layoutX="504.0" layoutY="284.0" mnemonicParsing="false" onAction="#handleRGBtoBRG" prefHeight="26.0" prefWidth="182.0" text="RGB to BRG" />
                <Button fx:id="Prewitt" layoutX="504.0" layoutY="284.0" mnemonicParsing="false" onAction="#handlePrewitt" prefHeight="26.0" prefWidth="182.0" text="Prewitt" />
             </ListView>
-            <Label layoutX="10.0" layoutY="186.0" text="Filtres :" />
+            <Label layoutX="10.0" layoutY="197.0" text="Filtres :" />
          </children></Pane>
-      <Button layoutX="878.0" layoutY="14.0" mnemonicParsing="false" text="Retour" onAction="#redirectToMain" />
+      <Button layoutX="841.0" layoutY="14.0" mnemonicParsing="false" onAction="#redirectToMain" text="Choisir une autre photo" />
+      <Label layoutX="412.0" layoutY="41.0" text="Exemple : Rouge, Ferrari, Noire..." textFill="WHITE">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
