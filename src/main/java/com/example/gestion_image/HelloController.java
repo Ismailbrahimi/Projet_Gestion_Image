@@ -12,6 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
@@ -279,9 +280,8 @@ public class HelloController {
                     System.out.println("Marque = "+p.getMarque()+" Modele = "+p.getModele()+" Couleur = "+p.getCouleur()+" Annee = "+ p.getAnnee()+"  - URL : "+p.getUrl());
                     String path = "Ressources\\"+p.getUrl();
                     String choix= p.getMarque()+" - "+ p.getMarque()+" - "+p.getCouleur()+" - "+p.getAnnee();
-                    listV.getItems().add(choix);
+                    listV.getItems().add(p);
                     file = new File(path);
-
 
                     ivFiles.setImage(new Image(file.toURI().toString()));
 
@@ -305,6 +305,25 @@ public class HelloController {
         {
             e.printStackTrace();
         }
+
+    }
+
+    public void handleChoice() {
+        Object selected =  listV.getSelectionModel().getSelectedItem();
+        com.example.gestion_image.Image p = (com.example.gestion_image.Image)selected;
+        System.out.println("You choosed :  " + ((com.example.gestion_image.Image) selected).getCouleur());
+        String path = "Ressources\\"+p.getUrl();
+
+        file = new File(path);
+
+        ivFiles.setImage(new Image(file.toURI().toString()));
+
+        //on affecte les infos de l'image aux variable pour appliquer les flters
+        img = new Image(file.toURI().toString());
+        h= (int) img.getHeight();
+        w= (int) img.getWidth();
+
+
 
     }
 }
