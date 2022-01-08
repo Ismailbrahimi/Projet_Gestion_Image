@@ -17,7 +17,6 @@
       <ImageView fx:id="img9" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../../Ressources/Jaguar.jpg" /></image></ImageView>
       <ImageView fx:id="img10" fitHeight="150.0" fitWidth="200.0" layoutX="360.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../../Ressources/Isdera.jpg" /></image></ImageView>
       <ImageView fx:id="img11" fitHeight="150.0" fitWidth="200.0" layoutX="660.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../../Ressources/NissanGTR.jpg" /></image></ImageView>
-      <ImageView fx:id="img12" fitHeight="150.0" fitWidth="200.0" layoutX="960.0" layoutY="497.0" pickOnBounds="true" preserveRatio="true"><image><Image url="@../../../../../../Ressources/fiston.jpg" /></image></ImageView>
       <Button layoutX="652.0" layoutY="14.0" mnemonicParsing="false" text="Rechercher" />
       <TextField layoutX="392.0" layoutY="14.0" prefHeight="26.0" prefWidth="253.0" />
 
