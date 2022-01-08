@@ -5,8 +5,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -279,7 +279,21 @@ public class HelloController {
 
                     System.out.println("Marque = "+p.getMarque()+" Modele = "+p.getModele()+" Couleur = "+p.getCouleur()+" Annee = "+ p.getAnnee()+"  - URL : "+p.getUrl());
                     String path = "Ressources\\"+p.getUrl();
-                    String choix= p.getMarque()+" - "+ p.getMarque()+" - "+p.getCouleur()+" - "+p.getAnnee();
+
+                    listV.setCellFactory(param -> new ListCell<com.example.gestion_image.Image>() {
+                        @Override
+                        protected void updateItem(com.example.gestion_image.Image p, boolean empty) {
+                            super.updateItem(p, empty);
+
+                            if (empty || p == null || p.getMarque() == null) {
+                                setText(null);
+                            } else {
+                                String choix= p.getMarque()+" - "+ p.getMarque()+" - "+p.getCouleur()+" - "+p.getAnnee();
+                                setText(choix);
+                            }
+                        }
+                    });
+
                     listV.getItems().add(p);
                     file = new File(path);
                     listV.setOnMouseClicked(event -> {
