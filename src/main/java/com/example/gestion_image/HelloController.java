@@ -380,32 +380,20 @@ public class HelloController {
         }
 
     }
-    public void handleRechercheMain()
+    /*public void handleRechercheMain()
     {
     try {
             String critere = rechercheMain.getText();
             System.out.println("Recherche  : " + critere);
             ObjectMapper mapper = new XmlMapper();
             InputStream inputStream = new FileInputStream(new File("Ressources\\Image.xml"));
-            TypeReference<List<com.example.gestion_image.Image>> typeReference = new TypeReference<List<com.example.gestion_image.Image>>() {};
-            List<com.example.gestion_image.Image> images = mapper.readValue(inputStream, typeReference);
-        int i=0;
-        boolean x=true;
-
-        for(com.example.gestion_image.Image p :images) {
-
-            if(p.getModele().equals(critere) || p.getMarque().equals(critere) || p.getCouleur().equals(critere)|| p.getAnnee().equals(critere) ) {
-
-                System.out.println("Marque = " + p.getMarque() + " Modele = " + p.getModele() + " Couleur = " + p.getCouleur() + " Annee = " + p.getAnnee() + "  - URL : " + p.getUrl());
-                String path = "Ressources\\" + p.getUrl();
-            }
-        }
-
+         TypeReference<List<com.example.gestion_image.Image>> typeReference = new TypeReference<List<com.example.gestion_image.Image>>() {};
+        List<com.example.gestion_image.Image> images = mapper.readValue(inputStream, typeReference);
     }catch(Exception e)
         {
             e.printStackTrace();
         }
-    }
+    }*/
     public void handleChoice() {
         Object selected =  listV.getSelectionModel().getSelectedItem();
         com.example.gestion_image.Image p = (com.example.gestion_image.Image)selected;
