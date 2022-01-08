@@ -7,17 +7,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
 
-import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
 
@@ -113,22 +110,24 @@ public class HelloController {
         ivFiles.setImage(img);
     }
 
-    public void handleNoireBlanc() {
-
-        WritableImage imgOUT = new WritableImage(w,h);
-
-        for(int i = 0; i < h; i++) {
-            for(int j = 0; j < w; j++) {
-                Color colorImgIN = img.getPixelReader().getColor(j,i) ;
-                Color colorImgOUT = colorImgIN.grayscale();
-                imgOUT.getPixelWriter().setColor(j,i,colorImgOUT);
+    public void handleNoireBlanc() throws FileNotSelectedException{
+    try{
+            WritableImage imgOUT = new WritableImage(w, h);
+            for (int i = 0; i < h; i++) {
+                for (int j = 0; j < w; j++) {
+                    Color colorImgIN = img.getPixelReader().getColor(j, i);
+                    Color colorImgOUT = colorImgIN.grayscale();
+                    imgOUT.getPixelWriter().setColor(j, i, colorImgOUT);
+                }
             }
-        }//
-        ivFiles.setImage(imgOUT);
+            ivFiles.setImage(imgOUT);
+        }catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void handleRGBtoBRG() {
-
 
         WritableImage imgOUT1 = new WritableImage(w,h);
 
