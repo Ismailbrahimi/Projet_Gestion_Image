@@ -7,7 +7,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="920.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.gestion_image.HelloController">
    <children>
       <Button id="btn" fx:id="btnOpenImgFile" layoutX="700.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleBtnOpenImgFile" text="Importer une Image" />
-      <ImageView fx:id="ivFiles" fitHeight="243.0" fitWidth="341.0" layoutX="14.0" layoutY="73.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="ivFiles" fitHeight="340.0" fitWidth="558.0" layoutX="28.0" layoutY="138.0" pickOnBounds="true" preserveRatio="true" />
       <Label layoutX="701.0" layoutY="50.0" text="Effectuer un rotation :" />
       <Button fx:id="myRight" layoutX="779.0" layoutY="75.0" mnemonicParsing="false" onAction="#rotateImageRight" text="Droite " />
       <Button fx:id="myLeft" layoutX="701.0" layoutY="75.0" mnemonicParsing="false" onAction="#rotateImageLeft" text="Gauche" />
@@ -22,11 +22,6 @@
       </ListView>
       <Label layoutX="700.0" layoutY="186.0" text="Filtres :" />
       <Button layoutX="434.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleRecherche" text="Rechercher" />
-      <Label layoutX="17.0" layoutY="379.0" text="Marque :" />
-      <Label layoutX="17.0" layoutY="415.0" text="Modele :" />
-      <Label layoutX="17.0" layoutY="450.0" prefWidth="53.0" text="Couleur :" />
-      <TextField layoutX="74.0" layoutY="412.0" />
-      <TextField layoutX="74.0" layoutY="447.0" />
       <TextField fx:id="recherche" layoutX="246.0" layoutY="14.0" />
       <GridPane fx:id="gridpane" layoutX="382.0" layoutY="316.0" prefHeight="217.0" prefWidth="308.0">
         <columnConstraints>
