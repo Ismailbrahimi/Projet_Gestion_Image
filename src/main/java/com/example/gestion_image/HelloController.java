@@ -380,20 +380,6 @@ public class HelloController {
         }
 
     }
-    /*public void handleRechercheMain()
-    {
-    try {
-            String critere = rechercheMain.getText();
-            System.out.println("Recherche  : " + critere);
-            ObjectMapper mapper = new XmlMapper();
-            InputStream inputStream = new FileInputStream(new File("Ressources\\Image.xml"));
-         TypeReference<List<com.example.gestion_image.Image>> typeReference = new TypeReference<List<com.example.gestion_image.Image>>() {};
-        List<com.example.gestion_image.Image> images = mapper.readValue(inputStream, typeReference);
-    }catch(Exception e)
-        {
-            e.printStackTrace();
-        }
-    }*/
     public void handleChoice() {
         Object selected =  listV.getSelectionModel().getSelectedItem();
         com.example.gestion_image.Image p = (com.example.gestion_image.Image)selected;
