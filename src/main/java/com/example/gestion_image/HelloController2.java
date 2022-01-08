@@ -64,4 +64,7 @@ public class HelloController2 {
 
 
     }
+    public void redirectToMain(javafx.scene.input.MouseEvent mouseEvent) throws IOException {
+
+    }
 }

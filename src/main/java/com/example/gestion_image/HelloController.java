@@ -51,11 +51,9 @@ public class HelloController {
     public GridPane gridpane;
     public ListView listV;
     public String selected;
-
     public Parent root;
     public Stage stage;
     public Scene scene;
-
     int h ;
     int w ;
     boolean error=false;
@@ -79,8 +77,8 @@ public class HelloController {
 
     public void setPreloadedImage(Image pic){
         String old = pic.getUrl().toString();
-        String newt = old.replace("file:","").replace("/","\\");
-        System.out.println("NEWT  : "+newt);
+        String newt = old.replace("file:/","").replace("/","\\");
+
         file = new File(newt);
         img = pic;
         h=(int) img.getHeight();
@@ -88,6 +86,9 @@ public class HelloController {
         ivFiles.setImage(img);
     }
 
+    public void setPreloadedImage2(Image pic){
+
+    }
 
     @FXML
     public void rotateImageRight()
