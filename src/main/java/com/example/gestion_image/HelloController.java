@@ -6,6 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -50,6 +51,10 @@ public class HelloController {
     public GridPane gridpane;
     public ListView listV;
     public String selected;
+
+    public Parent root;
+    public Stage stage;
+    public Scene scene;
 
     int h ;
     int w ;
@@ -419,6 +424,14 @@ public class HelloController {
         h= (int) img.getHeight();
         w= (int) img.getWidth();
 
+    }
+    public void redirectToMain(ActionEvent event) throws IOException
+    {
+        root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 
 }
