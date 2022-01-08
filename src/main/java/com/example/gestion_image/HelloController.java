@@ -6,6 +6,7 @@ import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -35,6 +36,7 @@ public class HelloController {
     public  Image img;
     public TextField recherche;
     public GridPane gridpane;
+    public ListView listV;
     int h ;
     int w ;
 
@@ -261,6 +263,7 @@ public class HelloController {
     public void handleRecherche() {
 
         try{
+            listV.getItems().clear();
 
             String critere = recherche.getText();
             System.out.println("Recherche  : "+critere);
@@ -270,15 +273,15 @@ public class HelloController {
             List<com.example.gestion_image.Image> images = mapper.readValue(inputStream, typeReference);
 
             boolean x=true;
-//            int i=0;
             for(com.example.gestion_image.Image p :images) {
                 if(p.getModele().equals(critere) || p.getMarque().equals(critere) || p.getCouleur().equals(critere)|| p.getAnnee().equals(critere) ){
 
                     System.out.println("Marque = "+p.getMarque()+" Modele = "+p.getModele()+" Couleur = "+p.getCouleur()+" Annee = "+ p.getAnnee()+"  - URL : "+p.getUrl());
                     String path = "Ressources\\"+p.getUrl();
+                    String choix= p.getMarque()+" - "+ p.getMarque()+" - "+p.getCouleur()+" - "+p.getAnnee();
+                    listV.getItems().add(choix);
                     file = new File(path);
 
-                  //  gridpane.add(new ImageView(new Image(file.toURI().toString())),i,i);
 
                     ivFiles.setImage(new Image(file.toURI().toString()));
 
@@ -288,8 +291,7 @@ public class HelloController {
                     w= (int) img.getWidth();
                     x=false;
                 }
-                // i++;
-                //
+
             }
             if(x){
                 File f = new File("Ressources\\error.png");
