@@ -266,7 +266,7 @@ public class HelloController {
     public void handleRecherche() {
 
         try{
-
+            listV.setVisible(false);
             listV.getItems().clear();
 
             String critere = recherche.getText();
@@ -302,7 +302,6 @@ public class HelloController {
 
                     listV.getItems().add(p);
                     file = new File(path);
-
                     ivFiles.setImage(new Image(file.toURI().toString()));
 
                     //on affecte les infos de l'image aux variable pour appliquer les flters
@@ -319,8 +318,10 @@ public class HelloController {
 
             }
             if(x){
+                listV.setVisible(false);
                 File f = new File("Ressources\\error.png");
                 ivFiles.setImage(new Image(f.toURI().toString()));
+
             }
 
 
