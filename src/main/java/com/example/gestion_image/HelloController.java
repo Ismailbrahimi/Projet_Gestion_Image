@@ -116,7 +116,7 @@ public class HelloController {
 
     fc.setInitialDirectory(new File("Ressources"));
     //fc.setInitialDirectory(new File("F:\\ProjetPOO\\Ressources"));
-    // zakie fc.setInitialDirectory(new File("C:\Users\z_aki\OneDrive\Bureau\Mes études\2020-2021 dirasa\Java\Projet_Gestion_Image\Ressources"));
+    // zaquie fc.setInitialDirectory(new File("C:\Users\z_aki\OneDrive\Bureau\Mes études\2020-2021 dirasa\Java\Projet_Gestion_Image\Ressources"));
     fc.getExtensionFilters().clear();
     fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.gif"));
     file = fc.showOpenDialog(null);
