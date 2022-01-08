@@ -18,6 +18,10 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
 import javafx.stage.FileChooser;
+import java.awt.*;
+import java.awt.image.*;
+import javax.imageio.*;
+import java.io.*;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -56,8 +60,6 @@ public class HelloController {
     private Button btnOpenImgFile;
     @FXML
     public ImageView ivFiles;
-    @FXML
-    private ImageView ivFiles2;
 
     @FXML
     public ImageView img1;
@@ -70,26 +72,26 @@ public class HelloController {
     private AnchorPane listImg;
 
 
-    public void setPreloadedImage(String url){
-        file = new File(url);
-        img = new Image(file.toURI().toString());
-        h=(int) img.getHeight();
-        w= (int) img.getWidth();
-        ivFiles.setImage(img);
-    }
+    public void setPreloadedImage(Image pic){
+        String old = pic.getUrl().toString();
+        String newt = old.replace("file:","").replace("/","\\");
 
-    public void setPreloadedImage2(Image pic){
-      //  file = new File(url);
+        file = new File(newt);
         img = pic;
         h=(int) img.getHeight();
         w= (int) img.getWidth();
         ivFiles.setImage(img);
     }
 
+    public void setPreloadedImage2(Image pic){
+
+    }
+
     @FXML
     public void rotateImageRight()
     {
         if(!error) {
+            System.out.println("File from : "+file.toString());
             ivFiles.setRotate(ivFiles.getRotate() + 90);
         }
     }
@@ -244,14 +246,12 @@ public class HelloController {
     }
 
 
-
-
     public void handlePrewitt() throws IOException {
         if(!error) {
             try {
                 //lire l'image en format Buffered
                 BufferedImage bImg = ImageIO.read(file);
-               // BufferedImage bImg = (ToolkitImage) img;
+                System.out.println("BF read");
                 int grade = -1;
                 int[][] PriwettColors = new int[w][h];
                 double echelle = 0;

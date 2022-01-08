@@ -52,8 +52,8 @@ public class HelloController2 {
         FXMLLoader loader= new FXMLLoader(getClass().getResource("Accueil.fxml"));
         root= loader.load();
         HelloController hw1 = loader.getController();
-        //hw1.setPreloadedImage("Ressources\\NissanGTR.jpg");
-           hw1.setPreloadedImage2(iv.getImage());
+           System.out.println("Sent : "+iv.getImage().getUrl().toString());
+           hw1.setPreloadedImage(iv.getImage());
 
 
            stage = (Stage)((Node)mouseEvent.getSource()).getScene().getWindow();
