@@ -123,7 +123,7 @@ public class HelloController {
             ivFiles.setImage(imgOUT);
         }catch (Exception e)
         {
-            System.out.println(e.getMessage());
+            System.out.println("Aucune image selectionné pour appliquer ce filtre");
         }
     }
 
@@ -142,7 +142,7 @@ public class HelloController {
         ivFiles.setImage(imgOUT1);
     }catch (Exception e)
     {
-        System.out.println(e.getMessage());
+        System.out.println("Aucune image selectionné pour appliquer ce filtre");
     }
     }
 
@@ -199,7 +199,7 @@ public class HelloController {
         ivFiles.setImage(imgOUT2);
     }catch (Exception e)
     {
-        System.out.println(e.getMessage());
+        System.out.println("Aucune image selectionné pour appliquer ce filtre");
     }
     }
     // -----------------------------
@@ -272,7 +272,7 @@ public class HelloController {
         ivFiles.setImage(PriwettIMAGE);
     }catch (Exception e)
     {
-        System.out.println(e.getMessage());
+        System.out.println("Aucune image selectionné pour appliquer ce filtre");
     }
     }
 
