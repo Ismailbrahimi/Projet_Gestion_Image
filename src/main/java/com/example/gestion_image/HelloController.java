@@ -80,7 +80,7 @@ public class HelloController {
     public void setPreloadedImage(Image pic){
         String old = pic.getUrl().toString();
         String newt = old.replace("file:","").replace("/","\\");
-
+        System.out.println("NEWT  : "+newt);
         file = new File(newt);
         img = pic;
         h=(int) img.getHeight();
@@ -88,9 +88,6 @@ public class HelloController {
         ivFiles.setImage(img);
     }
 
-    public void setPreloadedImage2(Image pic){
-
-    }
 
     @FXML
     public void rotateImageRight()
