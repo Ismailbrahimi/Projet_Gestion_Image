@@ -1,0 +1,16 @@
+#anchor{
+    -fx-background-image: url(https://images.wallpaperscraft.com/image/single/texture_pattern_black_background_50469_1280x720.jpg);
+    -fx-border-image-width: 50, 50;
+    -fx-border-image-slice: 50, 20;
+    -fx-border-width:5,5;
+    -fx-alignment: center;
+}
+#pane
+{
+    -fx-background-color: white;
+}
+#pane1
+{
+    -fx-border-color: white;
+}
+

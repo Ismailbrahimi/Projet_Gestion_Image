@@ -47,30 +47,7 @@ public class HelloController {
     @FXML
     private ImageView ivFiles2;
 
-    @FXML
-    private ImageView img1;
-    @FXML
-    private ImageView img2;
-    @FXML
-    private ImageView img3;
-    @FXML
-    private ImageView img4;
-    @FXML
-    private ImageView img5;
-    @FXML
-    private ImageView img6;
-    @FXML
-    private ImageView img7;
-    @FXML
-    private ImageView img8;
-    @FXML
-    private ImageView img9;
-    @FXML
-    private ImageView img10;
-    @FXML
-    private ImageView img11;
-    @FXML
-    private ImageView img12;
+
 
     @FXML
     private Button myLeft;
@@ -110,13 +87,9 @@ public class HelloController {
     public void handleBtnOpenImgFile(ActionEvent event)
     {
         listV.setVisible(false);
-
         fc.setTitle("Title");
-    //l3ezzi
 
     fc.setInitialDirectory(new File("Ressources"));
-    //fc.setInitialDirectory(new File("F:\\ProjetPOO\\Ressources"));
-    // zaquie fc.setInitialDirectory(new File("C:\Users\z_aki\OneDrive\Bureau\Mes études\2020-2021 dirasa\Java\Projet_Gestion_Image\Ressources"));
     fc.getExtensionFilters().clear();
     fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("Image Files","*.png","*.jpg","*.gif"));
     file = fc.showOpenDialog(null);
@@ -321,7 +294,6 @@ public class HelloController {
             boolean x=true;
 
             for(com.example.gestion_image.Image p :images) {
-
                 if(p.getModele().equals(critere) || p.getMarque().equals(critere) || p.getCouleur().equals(critere)|| p.getAnnee().equals(critere) ){
 
                     System.out.println("Marque = "+p.getMarque()+" Modele = "+p.getModele()+" Couleur = "+p.getCouleur()+" Annee = "+ p.getAnnee()+"  - URL : "+p.getUrl());
