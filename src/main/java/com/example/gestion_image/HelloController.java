@@ -266,7 +266,7 @@ public class HelloController {
     public void handleRecherche() {
 
         try{
-
+            listV.setVisible(false);
             listV.getItems().clear();
 
             String critere = recherche.getText();
@@ -318,7 +318,7 @@ public class HelloController {
 
             }
             if(x){
-                listV.setVisible(true);
+                listV.setVisible(false);
                 File f = new File("Ressources\\error.png");
                 ivFiles.setImage(new Image(f.toURI().toString()));
 
